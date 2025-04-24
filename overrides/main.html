@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  &lt;!-- Extra head content for Spokane Mountaineers -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+  <meta property="og:description" content="{{ config.site_description }}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:image" content="{{ config.site_url }}assets/images/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}">
+  <meta name="twitter:description" content="{{ config.site_description }}">
+  <meta name="twitter:image" content="{{ config.site_url }}assets/images/og-image.jpg">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ config.site_url }}assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ config.site_url }}assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ config.site_url }}assets/images/favicon-16x16.png">
+  <link rel="manifest" href="{{ config.site_url }}assets/site.webmanifest">
+  <link rel="mask-icon" href="{{ config.site_url }}assets/images/safari-pinned-tab.svg" color="#2e7d32">
+  <meta name="msapplication-TileColor" content="#2e7d32">
+  <meta name="theme-color" content="#2e7d32">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{% endblock %}
+
+{% block announce %}
+  &lt;!-- Announcement banner -->
+  <a href="{{ 'join' | url }}">
+    <strong>Join Spokane Mountaineers today!</strong> Become a member and access hundreds of outdoor activities. <span class="twemoji">{% include ".icons/octicons/arrow-right-16.svg" %}</span>
+  </a>
+{% endblock %}
+
+{% block content %}
+  {{ super() }}
+{% endblock %}
